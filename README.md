@@ -53,22 +53,22 @@ Se ha comprobado que está utilizando MariaDB porque aparece `mysql`, con el com
 
 He añadido a nextcloud una imagen mía ( la reconocerás enseguida ), he ejecutado `docker compose down` y he comprobado que se han eliminado los contenedores, he ejecutado `docker compose up -d`, he vuelto al navegador, he cerrado sesión y vuelto a entrar y la foto sigue estando disponible, esto es posible porque los datos se almacenan en volúmenes persistentes.
 
-![fotonextcloud](Capturas/fotoNextcloud.png)
+![fotonextcloud](capturas/fotoNextcloud.png)
 
 ### 1.5 Adaptar y diagnosticar
 
 He cambiado el puerto de acceso 8085 por 8086 temporalmente y comprobado que funciona bien.
 
-![puerto8086](Capturas/puerto8086.png)
+![puerto8086](capturas/puerto8086.png)
 
 Con el comando `docker compose logs --tail=50 db` en los registros de MariaDB aparece el mensaje `ready for connections`, que nos indica que el servicio se ha iniciado correctamente y está preparado para recibir conexiones.
 
-![logsMaria](Capturas/logsMaria.png)
+![logsMaria](capturas/logsMaria.png)
 
 Con el comando `docker compose logs --tail=50 app` comprobamos que en los registros de nextcloud aparecen peticiones HTTP con respuestas 200 y 304.
 Nos está indicando que la aplicación estña respondiendo correctamente a las peticiones del navegador.
 
-![logsApp](Capturas/logsApp.png)
+![logsApp](capturas/logsApp.png)
 
 ### Explica qué ocurriría si MariaDB no estuviera preparada cuando Nextcloud intentase conectarse
 
